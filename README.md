@@ -1,5 +1,34 @@
-# vue-webapp
+# vue-sell-app
 this is a vue app project
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 ## 学习内容
 >* `Vue.js框架介绍`
 >* `Vue-cli脚手架`     搭建基本框架代码
@@ -73,3 +102,6 @@ vue也有一些独有的特性，比如计算属性。
 > 就近维护原则体现了前端工程化思想，它为前端开发提供了很好的xx策略，每个开发者都将清楚的知道自己所开发维护的功能单元，代码必然存在对应的组件目录中，在目录下就可以找到功能单元内所有的内部逻辑，样式也好，js也好，都在。在vuejs中，可以通过.vue文件把组件依赖的模板，js,css都写在一个文件中，这把组件化的就近维护思想发挥到了极致
 * 页面不过是组件的容器，组件可以嵌套自由组合形成完整的页面
 > 在我们本次项目开发中，我们就会把页面拆分成一个个组件，我们会通过实战的方式加深对组件化的认识。
+## vue-cli
+vue-cli 是vue的脚手架工具，帮助我们写好vue.js基础代码的工具。能帮我们搞定`目录结构`，`本地调试`，`代码部署`，`热加载`，`单元测试`等工作。
+
