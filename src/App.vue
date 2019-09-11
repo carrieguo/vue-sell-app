@@ -12,6 +12,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted: function(){
+    this.axios.get('contactList').then(res => {
+      console.error(res);
+    });
   }
 }
 </script>
