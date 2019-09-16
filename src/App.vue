@@ -12,6 +12,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted: function(){
+    this.axios.get('/data/test.json').then(res => {
+      console.log(res);
+    });
   }
 }
 </script>
