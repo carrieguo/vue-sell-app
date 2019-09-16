@@ -14,8 +14,8 @@ export default {
     HelloWorld
   },
   mounted: function(){
-    this.axios.get('contactList').then(res => {
-      console.error(res);
+    this.axios.get('/data/test.json').then(res => {
+      console.log(res);
     });
   }
 }

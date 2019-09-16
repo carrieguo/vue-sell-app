@@ -109,3 +109,6 @@ vue-cli 是vue的脚手架工具，帮助我们写好vue.js基础代码的工具
 * src 文件夹： 存放项目源码
 > src 文件夹下新建common文件夹，用来存放 公共模块资源。
 > stylus 是css预处理器，和less,sass差不多。
+
+## 项目骨架
+移动端

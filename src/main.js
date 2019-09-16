@@ -7,4 +7,4 @@ Vue.prototype.axios = Axios;
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');
