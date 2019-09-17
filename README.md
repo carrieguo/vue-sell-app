@@ -111,4 +111,7 @@ vue-cli 是vue的脚手架工具，帮助我们写好vue.js基础代码的工具
 > stylus 是css预处理器，和less,sass差不多。
 
 ## 项目骨架
-移动端
+> 移动端Flex布局
+> 移动端设计都是按像素的两倍来设计`dpi=2来设计`，设备像素，物理像素，
+> vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
+> 选项卡切换时，我们通过vue-router来实现。
