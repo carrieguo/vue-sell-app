@@ -13,6 +13,7 @@ const routes = [
 ];
 
 let router = new VueRouter({
+    linkActiveClass: 'active',
     routes // (缩写) 相当于 routes: routes
 });
 export default router;

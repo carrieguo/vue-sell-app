@@ -2,9 +2,9 @@
   <div id="app">
     <Top />
     <div class="tab">
-      <div class="tab-item"><router-link to="/goods">商品</router-link></div>
-      <div class="tab-item"><router-link to="/ratings">评论</router-link></div>
-      <div class="tab-item"><router-link to="/seller">商家</router-link></div>
+      <div class="tab-item"><router-link active-class="active" to="/goods">商品</router-link></div>
+      <div class="tab-item"><router-link active-class="active" to="/ratings">评论</router-link></div>
+      <div class="tab-item"><router-link active-class="active" to="/seller">商家</router-link></div>
     </div>
     <router-view></router-view>
   </div>
@@ -36,4 +36,11 @@ export default {
       .tab-item
         flex: 1;
         text-align: center;
+        & > a
+          display:block;
+          font-size : 14px;
+          color : rgb(77, 85, 93);
+          text-decoration : none;
+          &.active
+            color 
 </style>
