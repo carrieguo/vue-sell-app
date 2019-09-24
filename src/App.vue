@@ -40,7 +40,6 @@ export default {
           display:block;
           font-size : 14px;
           color : rgb(77, 85, 93);
-          text-decoration : none;
           &.active
-            color 
+            color : #f01414;
 </style>

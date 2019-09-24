@@ -119,3 +119,4 @@ SPA 单页
 > vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
 > 选项卡切换时，我们通过vue-router来实现。
 > css书写规范： 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
+> 手机端的dbi概念，iphone6下物理像素是设备像素的两倍，对于边框的1像素如何实现。通过伪类：after
