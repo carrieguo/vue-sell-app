@@ -27,12 +27,15 @@ export default {
 </script>
 
 <style lang="stylus">
+  @import "./common/stylus/mixin.styl"
   #app
     .tab
       display: flex;
       width: 100%;
       height: 40px;
       line-height: 40px;
+      // border-border-bottom 1px solid rgba(7, 17, 27, 0.1)
+      border-1px(rgba(7, 17, 27, 0.1));
       .tab-item
         flex: 1;
         text-align: center;
