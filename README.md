@@ -122,4 +122,4 @@ SPA 单页
 > 手机端的dbi概念，iphone6下物理像素是设备像素的两倍，对于边框的1像素如何实现。通过伪类：after
 media query对移动端设备做缩放，这样就可以达到一像素的效果
 > mixin是一个css预处理器，提供一个特殊的方法。可以通过定义一个函数并调用来实现通用
-> @import是stylus的引入语法，可以引入任意路径下的stylus文件
+> @import是stylus的引入语法(引入css的通用语法)，可以引入任意路径下的stylus（css）文件
