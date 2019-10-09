@@ -18,6 +18,15 @@ export default {
   components: {
     Top
   },
+  data: function () {
+    return { a: 1 }
+  },
+  created(){
+    // this.$http.get('/api/seller').then((res)=>{
+    //   res = res.json();
+    //   if(res.errorno === 0)
+    // });
+  },
   mounted: function(){
     this.axios.get('/data/test.json').then(res => {
       console.log(res);
