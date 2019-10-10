@@ -22,12 +22,16 @@ export default {
     return { a: 1 }
   },
   created(){
-    // this.$http.get('/api/seller').then((res)=>{
-    //   res = res.json();
-    //   if(res.errorno === 0)
-    // });
+    //使用vue-resource在vue实例的方法中发送http请求
+    this.$http.get('/seller').then((res)=>{
+      res = res.json();
+      if(res.errorno === 0){
+        console.log(res.data);
+      }
+    });
   },
   mounted: function(){
+    //使用axios在vue实例的方法中发送http请求
     this.axios.get('/data/test.json').then(res => {
       console.log(res);
     });
