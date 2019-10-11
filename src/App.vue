@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Top />
+    <Top :seller="seller" />
     <div class="tab">
       <div class="tab-item"><router-link active-class="active" to="/goods">商品</router-link></div>
       <div class="tab-item"><router-link active-class="active" to="/ratings">评论</router-link></div>
@@ -12,6 +12,7 @@
 
 <script>
 import Top from './components/header/top.vue'
+const ERR_OK = 0;
 
 export default {
   name: 'app',
@@ -19,21 +20,24 @@ export default {
     Top
   },
   data: function () {
-    return { a: 1 }
+    return {
+      seller : {}
+    }
   },
   created(){
     //使用vue-resource在vue实例的方法中发送http请求
     this.$http.get('/seller').then((res)=>{
-      res = res.json();
-      if(res.errorno === 0){
-        console.log(res.data);
+      res = res.body;
+      if(res.errno === ERR_OK){
+        this.seller = res.data;
+        console.log(this.seller);
       }
     });
   },
   mounted: function(){
     //使用axios在vue实例的方法中发送http请求
     this.axios.get('/data/test.json').then(res => {
-      console.log(res);
+      console.log('test' + res);
     });
   }
 }
