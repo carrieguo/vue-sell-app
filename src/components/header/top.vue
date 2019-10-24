@@ -39,7 +39,7 @@ export default {
 
 <style lang="stylus">
   @import "../../common/stylus/mixin";
-  @import "../../common/stylus/font.styl"
+  @import "../../common/stylus/font.css"
 
   .header
     color: #fff;
@@ -110,6 +110,6 @@ export default {
           font-size: 10px;
         .icon 
           font-size: 10px;
-        .icon:before
-          content: "\e909"
+        // .icon:before
+        //   content: "\e909"
 </style>
