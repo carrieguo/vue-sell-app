@@ -67,8 +67,11 @@ export default {
             background-size: 30px 18px;
             background-repeat: no-repeat;
           .name
-            padding-left: 10px;
-            font-size: 14px;
+            margin-left: 6px;
+            //padding-left: 10px;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: bold;
         .description
           margin-bottom: 10px;
           line-height: 12px;
