@@ -109,15 +109,11 @@ vue-cli 是vue的脚手架工具，帮助我们写好vue.js基础代码的工具
 * src 文件夹： 存放项目源码
 
 ## 需求分析
-SPA 单页
+`SPA 单页` 切换子页面时不会刷新整个页面
 > src 文件夹下新建common文件夹，用来存放 公共模块资源。
 > stylus 是css预处理器，和less,sass差不多。
 
-## 项目字体制作
-> IconMoon 导入自己的icon文件，可以生成图标字体
-## 项目骨架
-> 移动端Flex布局
-> 移动端设计都是按像素的两倍来设计`dpi=2来设计`，设备像素，物理像素，
+## 项目资源准备
 > vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
 > 选项卡切换时，我们通过第三方插件vue-router来实现。
 > css书写规范： 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
@@ -127,3 +123,20 @@ media query对移动端设备做缩放，这样就可以达到一像素的效果
 > @import是stylus的引入语法(引入css的通用语法)，可以引入任意路径下的stylus（css）文件
 > ajax 请求。vuejs社区有一个比较火的第三方插件vue-resource,用来处理一些前后端请求数据交互。我们规定按errno来判断返回数据是否正常，errno为0时，表示返回数据正常
 > 将静态资源放到当前目录下的vue组件下
+
+## 项目骨架
+> 移动端Flex布局
+> `device pixel ratio` 设备上物理像素和设备独立像素(device-indeoendent pixels(dips))的比例。
+> 移动端设计都是按像素的两倍来设计`iphone6 = 2, iphone6plus = 3`，比值越大，显示的密度就越高。我们可以通过`media query`来判断代码运行在何种dpr的手机上。
+> 项目将图标切成一个个的图片，而不是用雪碧图。因为我们通常采用雪碧图来减少对图片的请求次数，以达到性能优化的目的。在webpack的构建项目中，用单张图。webpack的url-loader帮我们实现图片打包，先将图片base64,然后打包到js文件中，这样我们甚至连一个图片的请求都不会有。
+>`SVG目录` svg是矢量图片，我们会使用一些工具将svg图片转换成图标字体文件。
+
+## 图标字体制作
+> IconMoon 导入自己的icon文件，可以生成图标字体
+
+## 项目目录设计
+> 所有的代码都会放到src目录下，main.js的入口文件，app.vue文件是整个页面的vue实例文件，也就是把整个页面看成vue的大组件。src目录下我们通常会有两个子目录，
+1. components目录存放组件文件，但我们不会像脚手架工具自动生成代码一样将vue文件直接放到目录下，我们会多建一个子目录，比如我们创建一个header组件，我们会在components目录下创建一个叫header的目录，然后在header目录下创建header.vue。这样组件相关的图片等各类资源就能就近维护。
+2. common目录 主要包含一些公共资源，包含三个子目录js,stylus,fonts
+stylus是css预处理器，类似于less,sass
+
