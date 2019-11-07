@@ -140,3 +140,5 @@ media query对移动端设备做缩放，这样就可以达到一像素的效果
 2. common目录 主要包含一些公共资源，包含三个子目录js,stylus,fonts
 stylus是css预处理器，类似于less,sass
 
+## 页面骨架开发
+
