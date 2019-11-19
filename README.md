@@ -114,9 +114,6 @@ vue-cli 是vue的脚手架工具，帮助我们写好vue.js基础代码的工具
 > stylus 是css预处理器，和less,sass差不多。
 
 ## 项目资源准备
-> vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
-> 选项卡切换时，我们通过第三方插件vue-router来实现。
-> css书写规范： 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
 > 手机端的dbi概念，iphone6下物理像素是设备像素的两倍，对于边框的1像素如何实现。通过伪类：after
 media query对移动端设备做缩放，这样就可以达到一像素的效果
 > mixin是一个css预处理器，提供一个特殊的方法。可以通过定义一个函数并调用来实现通用
@@ -124,15 +121,12 @@ media query对移动端设备做缩放，这样就可以达到一像素的效果
 > ajax 请求。vuejs社区有一个比较火的第三方插件vue-resource,用来处理一些前后端请求数据交互。我们规定按errno来判断返回数据是否正常，errno为0时，表示返回数据正常
 > 将静态资源放到当前目录下的vue组件下
 
-## 项目骨架
-> 移动端Flex布局
+## 图标字体制作
+> IconMoon 导入自己的icon文件，可以生成图标字体
 > `device pixel ratio` 设备上物理像素和设备独立像素(device-indeoendent pixels(dips))的比例。
 > 移动端设计都是按像素的两倍来设计`iphone6 = 2, iphone6plus = 3`，比值越大，显示的密度就越高。我们可以通过`media query`来判断代码运行在何种dpr的手机上。
 > 项目将图标切成一个个的图片，而不是用雪碧图。因为我们通常采用雪碧图来减少对图片的请求次数，以达到性能优化的目的。在webpack的构建项目中，用单张图。webpack的url-loader帮我们实现图片打包，先将图片base64,然后打包到js文件中，这样我们甚至连一个图片的请求都不会有。
 >`SVG目录` svg是矢量图片，我们会使用一些工具将svg图片转换成图标字体文件。
-
-## 图标字体制作
-> IconMoon 导入自己的icon文件，可以生成图标字体
 
 ## 项目目录设计
 > 所有的代码都会放到src目录下，main.js的入口文件，app.vue文件是整个页面的vue实例文件，也就是把整个页面看成vue的大组件。src目录下我们通常会有两个子目录，
@@ -141,4 +135,8 @@ media query对移动端设备做缩放，这样就可以达到一像素的效果
 stylus是css预处理器，类似于less,sass
 
 ## 页面骨架开发
+> 移动端Flex布局
+> `vue-loader` 依赖postcss插件。vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
+> `vue-router` 选项卡切换时，我们通过第三方插件vue-router来实现。
+> `css书写规范` 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
 

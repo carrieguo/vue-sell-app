@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+import './common/stylus/index.styl'
+
 //使用vue-resource或axios发送http请求
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
