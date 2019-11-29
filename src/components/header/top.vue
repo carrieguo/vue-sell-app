@@ -49,7 +49,7 @@ export default {
 
 .header {
   position: relative;
-  overflow hidden
+  overflow: hidden;
   color: #fff;
   background: rgba(7, 17, 27, 0.5);
 
@@ -162,19 +162,19 @@ export default {
   }
 
   .bulletin-wrapper {
-    position relative
+    position: relative;
     height: 28px;
     line-height: 28px;
     padding: 0 22px 0 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background rgba(7,17,27,0.2)
+    background: rgba(7, 17, 27, 0.2);
 
     .bulletin-title {
       display: inline-block;
-      vertical-align top
-      margin-top 7px
+      vertical-align: top;
+      margin-top: 8px;
       width: 22px;
       height: 12px;
       bg-image('bulletin');
@@ -183,16 +183,16 @@ export default {
     }
 
     .bulletin-text {
-      vertical-align top
-      margin 0 4px
+      vertical-align: top;
+      margin: 0 4px;
       font-size: 10px;
     }
 
     .icon-keyboard_arrow_right {
-      position absolute
-      font-size 10px
-      right 12px
-      top 8px
+      position: absolute;
+      font-size: 10px;
+      right: 12px;
+      top: 8px;
     }
   }
 
