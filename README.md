@@ -141,6 +141,7 @@ stylus是css预处理器，类似于less,sass
 > `css书写规范` 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
 
 ## header 组件开发
-> `Css Sticky footers 布局` 
+> `Css Sticky footers 布局`  效果：将footer固定到底部。文章内容不足满屏时 footer在底部，超过满屏时footer在内容末尾。
+
 > 使用`v-show`指令控制浮层的显示，给vue的实例加选项data function()中detailShow:false.我们在new vue(),vue在实例化的时候会对data对象里的变量进行遍历，添加getter和setter,这样，在变量变化时，DOM能随着变量变化。
 
