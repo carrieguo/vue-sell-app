@@ -136,12 +136,12 @@ stylus是css预处理器，类似于less,sass
 
 ## 页面骨架开发
 > 移动端Flex布局
-> `vue-loader` 依赖postcss插件。vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。
+> `vue-loader` 依赖postcss插件。vue的css会自动生成一些浏览器的兼容性写法，因为vue-loader依赖postcss插件,postcss会自动搞定css兼容问题。Postcss 是根据[can i use](http://caniuse.com/)官网去写代码。
 > `vue-router` 选项卡切换时，我们通过第三方插件vue-router来实现。
 > `css书写规范` 写css时布局样式写在前面（postion, display），宽高（重绘）的放在后面，最后写字体之类可被继承的属性，重绘不影响重排。
 
 ## header 组件开发
 > `Css Sticky footers 布局`  效果：将footer固定到底部。文章内容不足满屏时 footer在底部，超过满屏时footer在内容末尾。
-
+> `flex 布局` 实现浮层小标题和两边的两条横线。postcss自动添加兼容性代码。
 > 使用`v-show`指令控制浮层的显示，给vue的实例加选项data function()中detailShow:false.我们在new vue(),vue在实例化的时候会对data对象里的变量进行遍历，添加getter和setter,这样，在变量变化时，DOM能随着变量变化。
 
