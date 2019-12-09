@@ -12,6 +12,12 @@ border-1px($color) {
     }
 }
 
+border-none() {
+    &:after {
+        display: none;
+    }
+}
+
 bg-image($url) {
     background-image: url($url + '@2x.png');
 
