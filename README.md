@@ -145,3 +145,7 @@ stylus是css预处理器，类似于less,sass
 > `flex 布局` 实现浮层小标题和两边的两条横线。postcss自动添加兼容性代码。
 > 使用`v-show`指令控制浮层的显示，给vue的实例加选项data function()中detailShow:false.我们在new vue(),vue在实例化的时候会对data对象里的变量进行遍历，添加getter和setter,这样，在变量变化时，DOM能随着变量变化。
 
+## goods 商品列表页开发
+> 两栏布局，左侧是商品分类栏，右侧是商品列表，左侧固定宽度，右侧与手机宽度自适应，适用flex布局。
+> 左侧商品分栏，右侧商品列表超出手机视口高度，可以滚动。最外层goods需要绝对定位。
+> 尽量用class去写样式而不是用标签，class查找性能要好于class,特别是层级嵌套比较深的情况下。
