@@ -163,3 +163,14 @@ stylus是css预处理器，类似于less,sass
 ```
 > 左侧商品分栏，右侧商品列表超出手机视口高度，可以滚动。最外层goods需要绝对定位。
 > 尽量用class去写样式而不是用标签，class查找性能要好于class,特别是层级嵌套比较深的情况下。
+## better-scroll
+```js
+import BScroll from '@better-scroll/core'
+import PullUp from '@better-scroll/pull-up'
+
+let bs = new BScroll('.wrapper', {
+  pullUpLoad: true
+})
+```
+> BScroll接收两个参数(DOM对象, options对象)。vue提供了一个api来获得dom对象，`ref="foodWrapper"`。通过 `this.$refs.foodWrapper` 取到。
+> [异步更新队列](https://cn.vuejs.org/v2/guide/reactivity.html#%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E9%98%9F%E5%88%97). BScroll在计算高度时，在初始化时，DOM还没有更新。虽然vue会根据数据的变化对DOM做映射，实际上vue在更新DOM时是异步的,为了在数据变化之后等待 Vue 完成更新 DOM，可以在数据变化之后立即使用 Vue.nextTick(callback)。这样回调函数将在 DOM 更新完成后被调用。

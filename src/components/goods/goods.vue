@@ -1,6 +1,6 @@
 <template>
   <div class="goods">
-    <div class="menu-wrapper">
+    <div class="menu-wrapper" ref="menuWrapper">
       <ul>
         <li v-for="item in goods" :key="item.index" class="menu-item">
           <span class="text border-1px">
@@ -10,7 +10,7 @@
         </li>
       </ul>
     </div>
-    <div class="foods-wrapper">
+    <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
         <li v-for="item in goods" :key="item.index" class="food-list">
           <h1 class="title">{{item.name}}</h1>
@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import BScroll from "@better-scroll/core";
+
 const ERR_OK = 0;
 export default {
   name: "goods",
@@ -60,8 +62,17 @@ export default {
       res = res.body;
       if (res.errno === ERR_OK) {
         this.goods = res.data;
+        this.$nextTick(() => {
+          this._initScroll();
+        });
       }
     });
+  },
+  methods: {
+    _initScroll() {
+      this.menuScroll = new BScroll(this.$refs.menuWrapper, {});
+      this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {});
+    }
   }
 };
 </script>
@@ -178,10 +189,11 @@ export default {
 
         .desc {
           margin-bottom: 8px;
+          line-height: 12px;
         }
 
         .extra {
-          &.count {
+          .count {
             margin-right: 12px;
           }
         }
@@ -191,7 +203,7 @@ export default {
           line-height: 24px;
 
           .now {
-            margin-right: 18px;
+            margin-right: 8px;
             font-size: 14px;
             color: rgb(240, 20, 20);
           }
