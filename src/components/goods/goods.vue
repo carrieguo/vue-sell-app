@@ -3,11 +3,11 @@
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
         <li
-          v-for="(item, name, index) in goods"
+          v-for="(item, index) in goods"
           :key="index"
           class="menu-item"
           :class="{current:currentIndex===index}"
-        >{{index}}
+        >
           <span class="text border-1px">
             <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>
             {{item.name}}
@@ -69,8 +69,7 @@ export default {
         let height1 = this.listHeight[i];
         let height2 = this.listHeight[i + 1];
 
-        if (!height2 || (this.scrollY > height1 && this.scrollY < height2)) {
-          console.log("scrollY " + i);
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
           return i;
         }
       }
