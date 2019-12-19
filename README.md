@@ -116,7 +116,7 @@ vue也有一些独有的特性，比如计算属性。
 
 ![data-res](./public/img/data-response. JPG)
 
-> 有一份数据a.b, 在一个vue对象实例化的过程中，会给a.b这份数据通过ES5的`object.defineproperty`属性添加getter和setter, 同时，vuejs会对模板做编译，解析生成一个指令对象，这里就是一个v-text指令。每个指令对象都会关联一个watcher, 当我们对指令对应的表达式a.b做求值时就会触发它的getter, 这里把依赖收集到watcher里面，当我们改变a.b的值时，我们会触发它的setter, 会通知到对应关联的watcher, 然后watcher就会再次对a.b求值，计算对比新旧值，当发现值改变了，watcher又会通知到指令，调用指令的update方法，由于指令是对DOM的封装，所以会调用原生DOM方法去更新视图。这样就完成了数据改变到视图更新的过程。
+> 有一份数据a.b, 在一个vue对象实例化的过程中，会给a.b这份数据通过ES5的 `object.defineproperty` 属性添加getter和setter, 同时，vuejs会对模板做编译，解析生成一个指令对象，这里就是一个v-text指令。每个指令对象都会关联一个watcher, 当我们对指令对应的表达式a.b做求值时就会触发它的getter, 这里把依赖收集到watcher里面，当我们改变a.b的值时，我们会触发它的setter, 会通知到对应关联的watcher, 然后watcher就会再次对a.b求值，计算对比新旧值，当发现值改变了，watcher又会通知到指令，调用指令的update方法，由于指令是对DOM的封装，所以会调用原生DOM方法去更新视图。这样就完成了数据改变到视图更新的过程。
 
 ### 2. 组件化
 
@@ -226,6 +226,7 @@ stylus是css预处理器，类似于less, sass
 ```
 
 ### 多行文本垂直居中 
+
 [参考](https://blog.csdn.net/carpenterworm1874/article/details/79664675)
 
 > 方法一：父元素使用display:table和子元素使用display:table-cell属性来模拟表格，子元素设置vertical-align:middle即可垂直居中
@@ -254,6 +255,7 @@ stylus是css预处理器，类似于less, sass
     vertical-align: middle;
 }
 ```
+
 > 方法二：对子元素设置display:inline-block属性，使其转化成行内块元素，模拟成单行文本。父元素设置对应的height和line-height。对子元素设置vertical-align:middle属性，使其基线对齐。添加line-height属性，覆盖继承自父元素的行高。缺点：文本的高度不能超过外部盒子的高度。
 
 > 方法三：脱离文档流的居中方式，把内部div设置宽高之后，再设置top为50%，使用负边距调整，将margin-top设置为负的高度的一半就可以垂直居中了。缺点：需要计算出多行文字固定的高度。高度一旦改变，负边距也要调整。
@@ -277,3 +279,13 @@ let bs = new BScroll('.wrapper', {
 > [异步更新队列](https://cn.vuejs.org/v2/guide/reactivity.html#%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E9%98%9F%E5%88%97)。BScroll在计算高度时，在初始化时，DOM还没有更新。虽然vue会根据数据的变化对DOM做映射，实际上vue在更新DOM时是异步的, 为了在数据变化之后等待 Vue 完成更新 DOM，可以在数据变化之后立即使用 Vue.nextTick(callback)。这样回调函数将在 DOM 更新完成后被调用。
 
 > 将左侧商品分栏和右侧商品列表(scrollY)做映射，利用vue中的计算属性
+
+## 购物车组件
+
+> 此组件固定在视口底部。分为左右两部分，使用flex布局，左侧自适应，右侧固定宽度。
+
+> 左侧分为 `logo-wrapper`  `price`  `desc` , 依次横向排列，使用 `inline-block` 布局。
+> 当子元素的display为inline或者inline-block的时候，这些缩进、换行就会产生空白，此时，最合适的方法就是父级设置： font-size: 0; 给子元素设置：font-size: 16px; 如此就达到了所需效果。
+
+> `box-sizing` [盒模型](https://blog.csdn.net/qq_26780317/article/details/80736514)在一些响应式布局中，我们使用了 `box-sizing` 修改了浏览器计算元素宽度、高度的方式，认为元素的宽度和高度是包括内边距padding和边框border, 那么content会随着实际的宽度进行自动缩放。
+

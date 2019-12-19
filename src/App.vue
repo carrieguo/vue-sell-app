@@ -42,7 +42,7 @@ export default {
   mounted: function() {
     //使用axios在vue实例的方法中发送http请求
     this.axios.get("/data/test.json").then(res => {
-      //console.log("test" + res);
+      console.log("test" + res);
     });
   }
 };

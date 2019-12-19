@@ -41,15 +41,20 @@
         </li>
       </ul>
     </div>
+    <shopcart></shopcart>
   </div>
 </template>
 
 <script>
 import BScroll from "@better-scroll/core";
+import shopcart from "../shopcart/shopcart.vue";
 
 const ERR_OK = 0;
 export default {
   name: "goods",
+  components: {
+    shopcart
+  },
   props: {
     seller: {
       type: Object
