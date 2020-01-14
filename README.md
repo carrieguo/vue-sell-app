@@ -289,3 +289,7 @@ let bs = new BScroll('.wrapper', {
 
 > `box-sizing` [盒模型](https://blog.csdn.net/qq_26780317/article/details/80736514)在一些响应式布局中，我们使用了 `box-sizing` 修改了浏览器计算元素宽度、高度的方式，认为元素的宽度和高度是包括内边距padding和边框border, 那么content会随着实际的宽度进行自动缩放。
 
+> totalPrices 根据 selectFoods 变化。selectFoods 是一个数组。每一项是goods.vue中的一个good, 但是多了一项count, 用来计算选了几次。 在vue中如果props里其中的类型是Array或object, defalut 是一个函数。
+
+> footer 右侧 结算按钮有三种状态。未买任何商品，“xx元起送”；未达到起送状态，“还差xx元起送”；达到起送标准，“去结算”状态；
+
