@@ -35,6 +35,9 @@
                   <span class="now">￥{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <cartControl :food="food"></cartControl>
+                </div>
               </div>
             </li>
           </ul>
@@ -48,12 +51,14 @@
 <script>
 import BScroll from "@better-scroll/core";
 import shopcart from "../shopcart/shopcart.vue";
+import cartControl from "../cartControl/cartControl";
 
 const ERR_OK = 0;
 export default {
   name: "goods",
   components: {
-    shopcart
+    shopcart,
+    cartControl
   },
   props: {
     seller: {
@@ -100,7 +105,8 @@ export default {
       this.menuScroll = new BScroll(this.$refs.menuWrapper, {});
       this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
         // 实时监听滚动位置
-        probeType: 3
+        probeType: 3,
+        click: true
       });
 
       this.foodsScroll.on("scroll", pos => {
@@ -270,6 +276,12 @@ export default {
             font-size: 10px;
             color: rgb(147, 153, 159);
           }
+        }
+
+        .cartcontrol-wrapper {
+          position: absolute;
+          right: 0;
+          bottom: 12px;
         }
       }
     }
