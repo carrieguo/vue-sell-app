@@ -26,8 +26,8 @@ export default {
       default() {
         return [
           {
-            price: 10,
-            count: 2
+            price: 0,
+            count: 0
           }
         ];
       }

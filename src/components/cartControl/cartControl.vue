@@ -1,6 +1,8 @@
 <template>
   <div class="cartcontrol">
-    <div class="cart-decrease icon-remove_circle_outline" v-show="food.count>0"></div>
+    <transition>
+      <div class="cart-decrease icon-remove_circle_outline" v-show="food.count>0" @click="decCart"></div>
+    </transition>
     <div class="cart-count" v-show="food.count>0">{{this.food.count}}</div>
     <div class="cart-add icon-add_circle" @click="addCart"></div>
   </div>
@@ -22,6 +24,11 @@ export default {
       } else {
         this.food.count++;
       }
+    },
+    decCart() {
+      if (this.food.count) {
+        this.food.count--;
+      }
     }
   }
 };
@@ -39,7 +46,18 @@ export default {
     color: rgb(0, 160, 220);
   }
 
-  .cart-decrease {
+  .v-enter-active, .v-leave-active {
+    transition: all 0.4s linear;
+  }
+
+  .v-enter-to, .v-leave {
+    opacity: 1;
+    transform: translateX(0px) rotate(-180deg);
+  }
+
+  .v-enter, .v-leave-to {
+    opacity: 0;
+    transform: translateX(24px) rotate(180deg);
   }
 
   .cart-count {

@@ -297,6 +297,7 @@ let bs = new BScroll('.wrapper', {
 ## cartcontrol组件
 
 > 在新增和删除某个字段时，如果要监听其变化，我们需要`Vue.set()`接口。
+> vue动画 transittion
 
 
 
